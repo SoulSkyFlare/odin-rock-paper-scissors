@@ -32,10 +32,12 @@ function randomIntFromInterval(min, max) {
 }
 
 function game(){
-    let roundsTotal = prompt("How many rounds do you want to play?")
-    for (i=0; i > roundsTotal; i++) {
+    let roundsTotal = prompt("How many rounds do you want to play?");
+    for (i=0; i < roundsTotal; i++) {
     let userPlay = prompt("Rock, paper or scissors?");
     let computerPlay = randomIntFromInterval(1, 3); // 1 = rock, 2 = paper, 3 = scissors
-    console.log(playRound(computerPlay, userPlay))
+    result=playRound(computerPlay, userPlay);
+    console.log(result);
     }
 }
+game()
