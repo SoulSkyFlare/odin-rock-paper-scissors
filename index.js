@@ -6,7 +6,8 @@ function randomIntFromInterval(min, max) {
 
   let userPlay = prompt("Rock, paper or scissors?");
 
-  let match = computerPlay.toString+userPlay.toLowerCase
+  let match = computerPlay.toString()+userPlay.toLowerCase();
+  
   switch(match) {
     case "1rock":
         console.log("Rock vs rock, tie");
