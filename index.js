@@ -2,40 +2,40 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  let computerPlay = randomIntFromInterval(1, 3); // 1 = rock, 2 = paper, 3 = scissors
 
-  let userPlay = prompt("Rock, paper or scissors?");
 
-  let match = computerPlay.toString()+userPlay.toLowerCase();
-  
-  switch(match) {
-    case "1rock":
-        console.log("Rock vs rock, tie");
-        break;
-    case "2rock":
-        console.log("You lose, paper beats rock");
-        break;
-    case "3rock":
-        console.log("You win! rock beats scissors");
-        break;
+  function playRound(computerSelection, userSelection) {
+
+    switch(computerSelection.toString()+userSelection.toLowerCase()) {
+        case "1rock":
+          return "Rock vs rock, tie";
+         case "2rock":
+          return "You lose, paper beats rock";
+
+        case "3rock":
+             return "You win! rock beats scissors";
     case "1scissors":
-        console.log("You lose, rock beats scissors");
-        break;
+        return "You lose, rock beats scissors";
     case "2scissors":
-        console.log("You win! Scissors beat paper");
-        break;
+        return"You win! Scissors beat paper";
     case "3scissors":
-        console.log("Scissors vs scissors, tie");
-        break;
+        return "Scissors vs scissors, tie";
     case "1paper":
-        console.log("You win, paper beats rock!");
-        break;
+        return "You win, paper beats rock!";
     case "2paper":
-        console.log("paper vs paper, tie");
-        break;
+        return "paper vs paper, tie";
     case "3paper":
-        console.log("You lose, scissors beat paper");
-        break;
+        return "You lose, scissors beat paper";
     default:
-        console.log("invalid input")
+        return "invalid input"
   }
+}
+
+function game(){
+    let roundsTotal = prompt("How many rounds do you want to play?")
+    for (i=0; i > roundsTotal; i++) {
+    let userPlay = prompt("Rock, paper or scissors?");
+    let computerPlay = randomIntFromInterval(1, 3); // 1 = rock, 2 = paper, 3 = scissors
+    console.log(playRound(computerPlay, userPlay))
+    }
+}
